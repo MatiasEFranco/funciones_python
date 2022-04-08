@@ -37,30 +37,48 @@ en la lista pueden usar el método nativo de list "count"
 # Aquí copiar la función "lista_aleatoria"
 # ya elaborada en el ejercicio anterior
 
+def lista_aleatoria(inicio, fin, cantidad):
+
+    lista_aux = []      #se genera una lista axuliar para ir guardadno los valores generados aleatoreamente
+
+    for i in range(cantidad):
+
+        lista_aux.append(random.randint(inicio,fin)) #consultar por que tendria que ir el fin+1 en la funcion random
+
+    return lista_aux    #retornamos la lista axuliar con los valores generados entre los limites indicados como "inicio" y "fin"
 
 # --------------------------------
 
 # --------------------------------
 # Aquí dentro definir la función contar
 
+def contar(lista, numero):
+
+    cantidad = lista.count(numero)
+
+    return cantidad
 
 # --------------------------------
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
     
-    inicio = 0
-    fin = 10
+    inicio = 1
+    fin = 6
     cantidad = 5
 
     # Alumno: Utilizar la función "lista_aleatoria"
     # para que genere una lista de 5 números que esten comprendidos
     # entre los números 1 al 6 inclusive
 
+    mi_lista_aleatoria = lista_aleatoria(inicio, fin, cantidad)
+
     # lista_numeros = lista_aleatoria()
 
     # Imprimir en pantalla "lista_numeros" que tendrá
     # los valores retornado por la función "lista_aleatoria":
+
+    print("Los limites son ",inicio, " y ",  fin, " y la lista generada es ", mi_lista_aleatoria)
 
     # print(lista_numeros)
 
@@ -68,6 +86,20 @@ if __name__ == '__main__':
     # en la lista aleatoria creada
     # cantidad_tres = contar(lista_numeros, 3)
 
+    numero = 3
+
+    cantiad_tres = contar(mi_lista_aleatoria, numero)
+
     # print(cantidad_tres)
+
+
+    if cantiad_tres != 1:
+
+        print("La cantidad de veces que se repite el numero ", numero, " es ", cantiad_tres, " veces")
+
+    else:
+
+        print("La cantidad de veces que se repite el numero ", numero, " es ", cantiad_tres, " vez")
+
 
     print("terminamos")
